@@ -1,0 +1,12 @@
+.loader {
+  background-color: #2da4ff;
+  color: white;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.spin {
+  margin-top: 20px;
+}

@@ -1,0 +1,42 @@
+.event-wrapper {
+  margin: 15px;
+}
+
+.event-inner-wrapper {
+  border: 1px solid white;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.event {
+  color: white;
+  padding: 5px;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.event:hover {
+  cursor: pointer;
+}
+
+.event-clock {
+  margin-right: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.event-title {
+  word-break: break-all;
+  margin-right: 5px;
+}
+
+.event-angle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}

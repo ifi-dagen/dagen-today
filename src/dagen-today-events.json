@@ -1,0 +1,104 @@
+{
+  "eventPeriods": [
+    {
+      "eventPeriodId": 1,
+      "eventPeriodHeaderText": "10:00 - 16:00: Standområdet er åpent og det blir masse kake til alle",
+      "eventPeriodCanExpand": false,
+      "events": []
+    },
+    {
+      "eventPeriodId": 2,
+      "eventPeriodHeaderText": "12:00 - 13:00",
+      "eventPeriodCanExpand": true,
+      "events": [
+        {
+          "eventId": 1,
+          "eventTitle": "Hvordan AI forandrer bilbransjen",
+          "eventStart": "10:00",
+          "eventHolder": "Sigurd Rognhaugen",
+          "eventLocation": "Seminarrom java",
+          "eventType": "Foredrag",
+          "eventDescription": "Sigurd er sykt opptatt av AI og biler og vil nå snakke masse om det!",
+          "eventIcon": "fas fa-comment"
+        },
+        {
+          "eventId": 2,
+          "eventTitle": "Taiyaki cray cornhole unicorn tofu four dollar toast yuccie",
+          "eventStart": "10:00",
+          "eventHolder": "Ola nordmann",
+          "eventLocation": "Seminarrom caml",
+          "eventType": "Lyntale",
+          "eventDescription": "Pickled jianbing kickstarter small batch flannel. Bitters vape vexillologist hammock flexitarian, brooklyn hexagon raclette authentic hella. Craft beer copper mug tote bag typewriter bushwick lomo locavore tumblr vexillologist palo santo gentrify tousled iceland. Squid sustainable austin literally, tilde coloring book raclette snackwave aesthetic vexillologist fam semiotics irony keytar heirloom.",
+          "eventIcon": "fas fa-bolt"
+        }
+      ]
+    },
+    {
+      "eventPeriodId": 3,
+      "eventPeriodHeaderText": "13:00 - 14:00: Lunsj",
+      "eventPeriodCanExpand": true,
+      "events": [
+        {
+          "eventId": 1,
+          "eventTitle": "Nå blir det lunsj i Escape, ta med vennene dine!",
+          "eventStart": "13:00",
+          "eventHolder": "",
+          "eventLocation": "Ecape",
+          "eventType": "",
+          "eventDescription": "Det blir lunsj i Escape der man kan velge mellom å spise gluten eller laktose.",
+          "eventIcon": ""
+        }
+      ]
+    },
+    {
+      "eventPeriodId": 4,
+      "eventPeriodHeaderText": "14:00 - 15:00",
+      "eventPeriodCanExpand": true,
+      "events": [
+        {
+          "eventId": 1,
+          "eventTitle": "Hva skjer hvis ingen laster ned flappy bird?",
+          "eventStart": "14:00",
+          "eventHolder": "Flap B. Ird",
+          "eventLocation": "Seminarrom simula",
+          "eventType": "Foredrag",
+          "eventDescription": "Nå skal jeg snakke om ting jeg syns er veldig spennende!",
+          "eventIcon": "fas fa-comment"
+        },
+        {
+          "eventId": 2,
+          "eventTitle": "Supersmidig utvikling med buzzwords",
+          "eventStart": "14:00",
+          "eventHolder": "Bus W. Ord",
+          "eventLocation": "Seminarrom carsberg",
+          "eventType": "Lyntale",
+          "eventDescription": "Det finnes sykt mange smidige buzzwords og det skal jeg fortelle at om siden jeg syns sånt er veldig gøy.",
+          "eventIcon": "fas fa-bolt"
+        }
+      ]
+    },
+    {
+      "eventPeriodId": 5,
+      "eventPeriodHeaderText": "15:00 - 16:00",
+      "eventPeriodCanExpand": false,
+      "events": []
+    },
+    {
+      "eventPeriodId": 6,
+      "eventPeriodHeaderText": "15:00 - 02:00: Fest i Escape",
+      "eventPeriodCanExpand": true,
+      "events": [
+        {
+          "eventId": 1,
+          "eventTitle": "Nå blir det fest i Escape, ta med vennene dine!",
+          "eventStart": "15:00",
+          "eventHolder": "",
+          "eventLocation": "Ecape",
+          "eventType": "",
+          "eventDescription": "Festen er åpen for alle, ta gjerne med en venn! Husk å tigge nok bonger!",
+          "eventIcon": ""
+        }
+      ]
+    }
+  ]
+}

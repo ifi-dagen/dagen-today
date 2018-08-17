@@ -1,0 +1,82 @@
+.event-info {
+  background-color: white;
+  width: 100%;
+  height: 130px;
+  border: 1px solid grey;
+  margin-bottom: 5px;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.event-info-title {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.event-info-icon {
+  margin-right: 5px;
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.event-info-inner-wrapper {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.event-info-eventHolder {
+  margin-top: 5px;
+}
+
+.event-info-eventLocation {
+  margin-top: 20px;
+}
+
+.event-info-link {
+  text-decoration: none;
+  color: black;
+}
