@@ -16,7 +16,7 @@ class App extends Component {
       this.setState({ eventPeriods: mockdata.eventPeriods });
     } else {
       fetch(
-        "https://us-central1-dagen-today-api.cloudfunctions.net/dagenEvents/"
+        "https://ifi-dagen.github.io/static-program/dagen-today-events.json"
       )
         .then(response => response.json())
         .then(data => {
@@ -35,3 +35,5 @@ class App extends Component {
 }
 
 export default App;
+
+// https://us-central1-dagen-today-api.cloudfunctions.net/dagenEvents/
