@@ -7,21 +7,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventPeriods: []
+      eventPeriods: [],
+      programPeriods: []
     };
   }
 
   componentDidMount() {
-    if (window.location.hostname === "localhost") {
+    if (window.location.hostname === "localehost") {
       this.setState({ eventPeriods: mockdata.eventPeriods });
     } else {
-      fetch(
+
+      let promises=[];
+
+      promises.push(fetch(
         "https://ifi-dagen.github.io/static-program/dagen-today-events.json"
       )
         .then(response => response.json())
         .then(data => {
-          this.setState({ eventPeriods: data.eventPeriods });
-        });
+          console.log(data)
+          this.setState({ eventPeriods: data.eventPeriods });// TODO: fikse promis
+        }));
+
+        promises.push(fetch(
+          "https://ifi-dagen.github.io/static-program/dagen-today-program.json"
+        )
+          .then(response => response.json())
+          .then(data => {
+            this.setState({ programPeriods: data.eventPeriods });
+          }));
+        
+        Promise.resolve(promises);
     }
   }
 

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import logo from "./dagen_all_trans_white.png";
-import "./EventList.css";
+import "./ProgramList.css";
 import Event from "../event/Event";
 import MainMenu from "../main-menu/MainMenu";
 
-class EventList extends Component {
+class ProgramList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ class EventList extends Component {
   }
 
   componentDidMount() {
-    this.setState({ eventPeriods: this.props.store.eventPeriods });
+    this.setState({ eventPeriods: this.props.store.programPeriods });
   }
 
   render() {
@@ -23,7 +23,7 @@ class EventList extends Component {
       <div className="Event-list">
         <header className="Event-list-header">
           <img src={logo} className="Event-list-logo" alt="logo" />
-          <h1 className="Event-list-title">PROGRAM FOR 2018</h1>
+          <h1 className="Event-list-title">FOREDRAG FOR 2018</h1>
           <MainMenu />
         </header>
         <div className="Event-list-wrapper">
@@ -36,4 +36,4 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+export default ProgramList;

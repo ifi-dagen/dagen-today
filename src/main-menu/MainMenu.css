@@ -1,0 +1,19 @@
+.main-menu {
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.menu-item-event {
+    display: inline;
+    margin: 1em;
+}
+
+.menu-item-prog {
+    display: inline;
+    margin: 1em;
+}
+
+.menu-item-fav {
+    display: inline;
+    margin: 1em;
+}

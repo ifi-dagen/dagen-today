@@ -80,3 +80,9 @@
   text-decoration: none;
   color: black;
 }
+
+.evnet-info-fav {
+  margin: 0.5em;
+  font-weight: 100;
+  -webkit-text-stroke: 1px white;
+}

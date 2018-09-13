@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import EventList from "./event-list/EventList";
 import EventMoreInfo from "./event-more-info/EventMoreInfo";
 import { Loader } from "./components/loader/Loader";
+import ProgramList from "./program-list/ProgramList";
+import Favourite from "./favourite/Favourite";
 
 class Routes extends Component {
   render() {
@@ -17,6 +19,16 @@ class Routes extends Component {
         <Route
           path="/info/:eventPeriodId/event/:eventId"
           render={prop => <EventMoreInfo {...prop} store={this.props.store} />}
+        />
+        <Route
+          exact
+          path="/program"
+          render={prop => <ProgramList {...prop} store={this.props.store} />}
+        />
+        <Route
+          exact
+          path="/favoritter"
+          render={prop => <Favourite {...prop} store={this.props.store} />}
         />
       </Switch>
     );

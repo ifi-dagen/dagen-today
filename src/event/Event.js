@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Event.css";
-import { EventInfo } from "./event-info/EventInfo";
+import EventInfo from "./event-info/EventInfo";
 
 class Event extends Component {
   constructor(props) {

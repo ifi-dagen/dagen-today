@@ -13,10 +13,14 @@ class EventMoreInfo extends Component {
     const { eventPeriodId, eventId } = this.props.match.params;
     const event = findEvent(this.props.store, eventPeriodId, eventId);
     this.setState({ event: event });
+    this.setState({ eventPeriodId: eventPeriodId });
   }
 
   render() {
-    const { event } = this.state;
+    const { event, eventPeriodId } = this.state;
+
+    const backUrl = eventPeriodId >= 100 ? '/program' : '/';
+
     return (
       <div className="event-more-info">
         <div className="event-more-info-fadein">
@@ -33,7 +37,7 @@ class EventMoreInfo extends Component {
             </div>
             <div className="event-more-info-holder">{event.eventHolder}</div>
           </div>
-          <Link to={`/`} className="event-more-info-link">
+          <Link to={backUrl} className="event-more-info-link">
             <div className="event-more-info-link-wrapper">
               <i className="fas fa-arrow-left" /> Tilbake
             </div>
