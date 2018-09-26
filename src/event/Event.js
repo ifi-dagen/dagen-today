@@ -49,15 +49,19 @@ class Event extends Component {
       ) &&
       eventPeriod.eventPeriodCanExpand &&
       eventPeriod.events.length > 0;
+    
+    const splitHeadertext = eventPeriod.eventPeriodHeaderText.split(':');
+    const onlyText = splitHeadertext[2];
+    const onlyTime = splitHeadertext[0] + ':' + splitHeadertext[1];
     return (
       <div className="event-wrapper">
         <div className="event-inner-wrapper">
           <div className="event" onClick={this.displayEventInfo.bind(this)}>
             <div className="event-clock">
-              <i className="far fa-clock clock" />
+              <i className="far fa-clock clock" />{onlyTime}
             </div>
             <div className="event-title">
-              {eventPeriod.eventPeriodHeaderText}
+              {onlyText}
             </div>
             <div className="event-angle">
               <i
