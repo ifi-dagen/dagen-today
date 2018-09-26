@@ -77,6 +77,7 @@ class EventInfo extends Component {
               {event.eventStart} {event.eventTitle} 
             </div>
             <div className="event-info-eventHolder">{event.eventHolder}</div>
+            <div className="event-info-desc">{event.eventDescription}</div>
             <div className="event-info-eventLocation">
               Hvor? {event.eventLocation} 
             </div>
