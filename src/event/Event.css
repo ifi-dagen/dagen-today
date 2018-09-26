@@ -21,11 +21,12 @@
 
 .event {
   color: white;
-  padding: 5px;
+  padding: 0 5px;
   align-self: center;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .event:hover {
@@ -42,6 +43,7 @@
 .event-title {
   word-break: break-all;
   margin-right: 5px;
+  line-height: 50px;
 }
 
 .event-angle {

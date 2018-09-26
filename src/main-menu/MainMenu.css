@@ -4,15 +4,19 @@
 
 .menu-item-event {
     display: inline;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .menu-item-prog {
     display: inline;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .menu-item-fav {
     display: inline;
-    margin: 1em;
+    margin: 0.5em;
+}
+
+a, a:hover {
+    color: white;
 }
