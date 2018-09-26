@@ -35,6 +35,7 @@
 
 .event-clock {
   margin-right: 5px;
+  margin-left: 5px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -44,10 +45,14 @@
   word-break: break-all;
   margin-right: 5px;
   line-height: 50px;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-angle {
-  margin-left: auto;
+  margin-right: 5px;
   display: flex;
   align-items: center;
 }
