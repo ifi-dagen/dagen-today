@@ -28,7 +28,7 @@ class EventList extends Component {
         </header>
         <div className="Event-list-wrapper">
           {eventPeriods.map((e, index) => (
-            <Event key={index} eventPeriod={e} periodId={e.eventPeriodId} />
+            <Event key={index} eventPeriod={e} periodId={e.eventPeriodId} menuType={0}/>
           ))}
         </div>
       </div>

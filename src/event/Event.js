@@ -11,30 +11,31 @@ class Event extends Component {
   }
 
   componentDidMount() {
-    const openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds"));
+    const { menuType } = this.props;
+    const openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds" + menuType));
     if (openEventPeriods) this.setState({ openEventPeriods: openEventPeriods });
   }
 
   displayEventInfo() {
-    const { eventPeriod } = this.props;
+    const { eventPeriod, menuType } = this.props;
 
-    let openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds"));
+    let openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds" + menuType));
     if (openEventPeriods) {
       if (openEventPeriods.find(pId => pId === eventPeriod.eventPeriodId)) {
         openEventPeriods = openEventPeriods.filter(
           pId => pId !== eventPeriod.eventPeriodId
         );
         this.setState({ openEventPeriods: openEventPeriods });
-        localStorage.setItem("pnevtprds", JSON.stringify(openEventPeriods));
+        localStorage.setItem("pnevtprds" + menuType, JSON.stringify(openEventPeriods));
       } else {
         openEventPeriods.push(eventPeriod.eventPeriodId);
         this.setState({ openEventPeriods: openEventPeriods });
-        localStorage.setItem("pnevtprds", JSON.stringify(openEventPeriods));
+        localStorage.setItem("pnevtprds" + menuType, JSON.stringify(openEventPeriods));
       }
     } else {
       this.setState({ openEventPeriods: [eventPeriod.eventPeriodId] });
       localStorage.setItem(
-        "pnevtprds",
+        "pnevtprds" + menuType,
         JSON.stringify([eventPeriod.eventPeriodId])
       );
     }

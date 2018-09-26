@@ -81,7 +81,7 @@ class Favourite extends Component {
         </header>
         <div className="Event-list-wrapper">
           {sortedFavs.map((e, index) => (
-            <Event key={index} eventPeriod={e} periodId={e.eventPeriodId} handleFavourites={this.handleFavourites} />
+            <Event key={index} eventPeriod={e} periodId={e.eventPeriodId} handleFavourites={this.handleFavourites} menuType={2}/>
           ))}
         </div>
       </div>
