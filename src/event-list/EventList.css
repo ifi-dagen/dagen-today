@@ -77,3 +77,9 @@
   -webkit-animation: fadein 2s; /* Safari and Chrome */
   -o-animation: fadein 2s; /* Opera */
 }
+
+@media (min-width: 1000px) { 
+  .Event-list-wrapper {
+    width: 40em;
+  }
+}
