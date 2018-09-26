@@ -6,7 +6,8 @@ class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openEventPeriods: []
+      openEventPeriods: [],
+      favouriteEventIds: [],
     };
   }
 
@@ -37,6 +38,17 @@ class Event extends Component {
         "pnevtprds",
         JSON.stringify([eventPeriod.eventPeriodId])
       );
+    }
+  }
+
+  handleFavourites = (favoriteOption) => {
+    if(favoriteOption.isFavourite) {
+      this.setState(prevState => ({
+        favouriteEventIds: [...prevState.favouriteEventIds, favoriteOption.periodId]
+      }));
+    } else {
+      let filteredFavouriteEventIds = this.state.favouriteEventIds.filter(id => id !== favoriteOption.periodId)
+      this.setState({favouriteEventIds: filteredFavouriteEventIds});
     }
   }
 
@@ -79,6 +91,8 @@ class Event extends Component {
               event={e}
               period={e.eventPeriod}
               periodId={periodId}
+              onSelectFavourite={this.handleFavourites.bind(this)}
+              refresh={this.handleFavourites}
             />
           ))}
         </div>

@@ -22,3 +22,19 @@ export const findEvent = (store, eventPeriodId, eventId) => {
 
   return null;
 };
+
+export const findEventPeriods = (store, eventPeriodId) => {
+  for (const period of store.eventPeriods) {
+    if (period.eventPeriodId === Number(eventPeriodId)) {   
+          return period;     
+    }
+  }
+
+  for (const period of store.programPeriods) {
+    if (period.eventPeriodId === Number(eventPeriodId)) {
+          return period;
+    }
+  }
+
+  return null;
+};

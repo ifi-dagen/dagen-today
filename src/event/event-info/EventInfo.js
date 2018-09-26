@@ -34,11 +34,52 @@ import { Link } from "react-router-dom";
 class EventInfo extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isFavouritePeriod: false
+    }
   }
 
-  /*setFavourite() {// TODO: Fikse denne slik at favourites kan legges til
+  componentDidMount() {
     const { event, periodId } = this.props;
-    console.log('event: ', event, ' periodid: ', periodId);
+
+    let favouriteEventPeriods = JSON.parse(localStorage.getItem("favs"));
+    if (favouriteEventPeriods) { 
+      if (favouriteEventPeriods.find(pId => pId === periodId)) {
+        this.setState({ isFavouritePeriod: true });
+      }
+    }
+  }
+
+  setFavourite() {// TODO: Fikse denne slik at favourites kan legges til
+    const { event, periodId } = this.props;
+
+    let favouriteEventPeriods = JSON.parse(localStorage.getItem("favs"));
+    if (favouriteEventPeriods) {
+      if (favouriteEventPeriods.find(pId => pId === periodId)) {
+        favouriteEventPeriods = favouriteEventPeriods.filter(
+          pId => pId !== periodId
+        );
+        this.setState({ isFavouritePeriod: false });
+        this.props.onSelectFavourite({isFavourite: false, periodId: periodId}); 
+        localStorage.setItem("favs", JSON.stringify(favouriteEventPeriods));
+      } else {
+        favouriteEventPeriods.push(periodId);
+        this.setState({ isFavouritePeriod: true });
+        this.props.onSelectFavourite({isFavourite: true, periodId: periodId}); 
+        localStorage.setItem("favs", JSON.stringify(favouriteEventPeriods));
+      }
+    } else {
+      this.setState({ isFavouritePeriod: true });
+      this.props.onSelectFavourite({isFavourite: true, periodId: periodId}); 
+      localStorage.setItem(
+        "favs",
+        JSON.stringify([periodId])
+      );
+    }
+  }
+
+  /*componentWillReceiveProps(props) {
+    console.log('props: ', props);
   }*/
 
   render() {
@@ -62,7 +103,7 @@ class EventInfo extends Component {
             </div>
           </div>
           </Link>
-          <div className="evnet-info-fav"><i className="far fa-star fa-2x"></i></div>
+          <div className="evnet-info-fav" onClick={this.setFavourite.bind(this)}> {this.state.isFavouritePeriod ? <i className="fas fa-star fa-2x"></i> : <i className="far fa-star fa-2x"></i> }</div>
         </div>
       
     );

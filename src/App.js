@@ -24,8 +24,7 @@ class App extends Component {
       )
         .then(response => response.json())
         .then(data => {
-          console.log(data)
-          this.setState({ eventPeriods: data.eventPeriods });// TODO: fikse promis
+          this.setState({ eventPeriods: data.eventPeriods });
         }));
 
         promises.push(fetch(
@@ -41,6 +40,9 @@ class App extends Component {
   }
 
   render() {
+
+    if(this.state.eventPeriods.length === 0 || this.state.programPeriods.length === 0) return <div></div>
+
     return (
       <div>
         <Routes store={this.state} />
