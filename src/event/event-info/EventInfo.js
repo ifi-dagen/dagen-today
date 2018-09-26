@@ -1,35 +1,5 @@
 import React, { Component } from "react";
 import "./EventInfo.css";
-import { Link } from "react-router-dom";
-
-/*export const EventInfo = props => {
-  const { event, periodId } = props;
-  if (!props.isVisible) return null;
-  else
-    return (
-      <Link
-        to={`/info/${periodId}/event/${event.eventId}`}
-        className="event-info-link"
-      >
-        <div className="event-info">
-          <div className="event-info-icon">
-            <i className={event.eventIcon} />
-          </div>
-          <div className="event-info-inner-wrapper">
-            <div className="event-info-title">
-              {event.eventType === "" ? "" : `${event.eventType}: `}
-              {event.eventStart} {event.eventTitle} 
-            </div>
-            <div className="event-info-eventHolder">{event.eventHolder}</div>
-            <div className="event-info-eventLocation">
-              Hvor? {event.eventLocation} 
-            </div>
-          </div>
-          <div className="evnet-info-fav"><i className="far fa-star fa-2x"></i></div>
-        </div>
-      </Link>
-    );
-};*/
 
 class EventInfo extends Component {
   constructor(props) {
@@ -40,7 +10,7 @@ class EventInfo extends Component {
   }
 
   componentDidMount() {
-    const { event, periodId } = this.props;
+    const { periodId } = this.props;
 
     let favouriteEventPeriods = JSON.parse(localStorage.getItem("favs"));
     if (favouriteEventPeriods) { 
@@ -50,8 +20,8 @@ class EventInfo extends Component {
     }
   }
 
-  setFavourite() {// TODO: Fikse denne slik at favourites kan legges til
-    const { event, periodId } = this.props;
+  setFavourite() {
+    const { periodId } = this.props;
 
     let favouriteEventPeriods = JSON.parse(localStorage.getItem("favs"));
     if (favouriteEventPeriods) {
@@ -60,16 +30,19 @@ class EventInfo extends Component {
           pId => pId !== periodId
         );
         this.setState({ isFavouritePeriod: false });
+        if(this.props.onSelectFavourite)
         this.props.onSelectFavourite({isFavourite: false, periodId: periodId}); 
         localStorage.setItem("favs", JSON.stringify(favouriteEventPeriods));
       } else {
         favouriteEventPeriods.push(periodId);
         this.setState({ isFavouritePeriod: true });
+        if(this.props.onSelectFavourite)
         this.props.onSelectFavourite({isFavourite: true, periodId: periodId}); 
         localStorage.setItem("favs", JSON.stringify(favouriteEventPeriods));
       }
     } else {
       this.setState({ isFavouritePeriod: true });
+      if(this.props.onSelectFavourite)
       this.props.onSelectFavourite({isFavourite: true, periodId: periodId}); 
       localStorage.setItem(
         "favs",
@@ -78,12 +51,19 @@ class EventInfo extends Component {
     }
   }
 
-  /*componentWillReceiveProps(props) {
-    console.log('props: ', props);
-  }*/
+  isFavourite = (periodId) => {
+    let favouriteEventPeriods = JSON.parse(localStorage.getItem("favs"));
+    if (favouriteEventPeriods) { 
+      if (favouriteEventPeriods.find(pId => pId === periodId)) {
+        return true;
+      }
+    }
+    return false;
+  };
 
   render() {
     const { event, periodId } = this.props;
+
     if (!this.props.isVisible) return null;
     else
     return (
@@ -91,7 +71,6 @@ class EventInfo extends Component {
           <div className="event-info-icon">
             <i className={event.eventIcon} />
           </div>
-          <Link to={`/info/${periodId}/event/${event.eventId}`} className="event-info-link">
           <div className="event-info-inner-wrapper">
             <div className="event-info-title">
               {event.eventType === "" ? "" : `${event.eventType}: `}
@@ -102,8 +81,7 @@ class EventInfo extends Component {
               Hvor? {event.eventLocation} 
             </div>
           </div>
-          </Link>
-          <div className="evnet-info-fav" onClick={this.setFavourite.bind(this)}> {this.state.isFavouritePeriod ? <i className="fas fa-star fa-2x"></i> : <i className="far fa-star fa-2x"></i> }</div>
+          <div className="evnet-info-fav" onClick={this.setFavourite.bind(this)}> {this.isFavourite(periodId) ? <i className="fas fa-star fa-2x"></i> : <i className="far fa-star fa-2x"></i> }</div>
         </div>
       
     );

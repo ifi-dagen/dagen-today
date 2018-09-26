@@ -6,8 +6,7 @@ class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openEventPeriods: [],
-      favouriteEventIds: [],
+      openEventPeriods: []
     };
   }
 
@@ -41,19 +40,8 @@ class Event extends Component {
     }
   }
 
-  handleFavourites = (favoriteOption) => {
-    if(favoriteOption.isFavourite) {
-      this.setState(prevState => ({
-        favouriteEventIds: [...prevState.favouriteEventIds, favoriteOption.periodId]
-      }));
-    } else {
-      let filteredFavouriteEventIds = this.state.favouriteEventIds.filter(id => id !== favoriteOption.periodId)
-      this.setState({favouriteEventIds: filteredFavouriteEventIds});
-    }
-  }
-
   render() {
-    const { eventPeriod, periodId } = this.props;
+    const { eventPeriod, periodId, handleFavourites } = this.props;
     const canShowEvent =
       this.state.openEventPeriods.find(
         pId => pId === eventPeriod.eventPeriodId
@@ -91,8 +79,7 @@ class Event extends Component {
               event={e}
               period={e.eventPeriod}
               periodId={periodId}
-              onSelectFavourite={this.handleFavourites.bind(this)}
-              refresh={this.handleFavourites}
+              onSelectFavourite={handleFavourites}
             />
           ))}
         </div>
