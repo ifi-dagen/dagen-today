@@ -30,6 +30,7 @@ class Routes extends Component {
           path="/favoritter"
           render={prop => <Favourite {...prop} store={this.props.store} />}
         />
+        <Route render={prop => <EventList {...prop} store={this.props.store} />} />
       </Switch>
     );
   }
