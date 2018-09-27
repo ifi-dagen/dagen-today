@@ -42,13 +42,10 @@ class Event extends Component {
   }
 
   render() {
-    const { eventPeriod, periodId, handleFavourites } = this.props;
-    const canShowEvent =
-      this.state.openEventPeriods.find(
-        pId => pId === eventPeriod.eventPeriodId
-      ) &&
-      eventPeriod.eventPeriodCanExpand &&
-      eventPeriod.events.length > 0;
+    const { eventPeriod, periodId, handleFavourites, menuType } = this.props;
+
+    const openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds" + menuType));
+    const canShowEvent = openEventPeriods ? openEventPeriods.find(pId => pId === eventPeriod.eventPeriodId) && eventPeriod.eventPeriodCanExpand && eventPeriod.events.length > 0 : false;
     
     const splitHeadertext = eventPeriod.eventPeriodHeaderText.split(':');
     const onlyText = splitHeadertext[2];
