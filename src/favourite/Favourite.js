@@ -66,6 +66,7 @@ class Favourite extends Component {
         </header>
         <div className="Event-list-wrapper">
           <h4>Du har ingen favoritter enda!</h4>
+          <h4>Trykk på stjernen for å legge de til.</h4>
         </div>
       </div>
     );
