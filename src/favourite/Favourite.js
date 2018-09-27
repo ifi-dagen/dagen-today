@@ -46,7 +46,7 @@ class Favourite extends Component {
     const day = d.getDate();
     const objToSort = favouriteEventPeriods;
     for(const period of objToSort) {
-      const timeStrings = period.eventPeriodHeaderText.split(':');
+      const timeStrings = period.eventPeriodTitleText.split(':');
       const reserv = new Date(year,month,day,timeStrings[0],timeStrings[1]);
       period.fullDateTime = reserv;
     }

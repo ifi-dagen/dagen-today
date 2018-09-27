@@ -47,7 +47,7 @@ class Event extends Component {
     const openEventPeriods = JSON.parse(localStorage.getItem("pnevtprds" + menuType));
     const canShowEvent = openEventPeriods ? openEventPeriods.find(pId => pId === eventPeriod.eventPeriodId) && eventPeriod.eventPeriodCanExpand && eventPeriod.events.length > 0 : false;
     
-    const splitHeadertext = eventPeriod.eventPeriodHeaderText.split(':');
+    const splitHeadertext = eventPeriod.eventPeriodTitleText.split(':');
     const onlyText = splitHeadertext[2];
     const onlyTime = splitHeadertext[0] + ':' + splitHeadertext[1];
     return (
