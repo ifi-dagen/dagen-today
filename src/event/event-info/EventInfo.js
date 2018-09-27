@@ -79,10 +79,10 @@ class EventInfo extends Component {
             <div className="event-info-eventHolder">{event.eventHolder}</div>
             <div className="event-info-desc">{event.eventDescription}</div>
             <div className="event-info-eventLocation">
-            <i class="fas fa-map-marker-alt"></i> {event.eventLocation} 
+            <i className="fas fa-map-marker-alt"></i> {event.eventLocation} 
             </div>
           </div>
-          <div className="evnet-info-fav" onClick={this.setFavourite.bind(this)}> {this.isFavourite(periodId) ? <i className="fas fa-star fa-2x"></i> : <i className="far fa-star fa-2x"></i> }</div>
+          <div className="evnet-info-fav"> {this.isFavourite(periodId) ? <i className="fas fa-star fa-2x" onClick={this.setFavourite.bind(this)}></i> : <i className="far fa-star fa-2x" onClick={this.setFavourite.bind(this)}></i> }</div>
         </div>
       
     );
