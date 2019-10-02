@@ -23,7 +23,7 @@ class EventList extends Component {
       <div className="Event-list">
         <header className="Event-list-header">
           <img src={logo} className="Event-list-logo" alt="logo" />
-          <h1 className="Event-list-title">PROGRAM FOR 2018</h1>
+          <h1 className="Event-list-title">PROGRAM FOR 2019</h1>
           <MainMenu />
         </header>
         <div className="Event-list-wrapper">
